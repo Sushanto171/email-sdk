@@ -20,13 +20,26 @@ export async function POST(req: Request): Promise<Response> {
       from: body?.from || body.smtp.auth.user,
       to: body.to,
       subject: body.subject,
-      html: body.html
+      html: body.html,
+      text: body.text,
     })
 
-    const resBody: ApiResponse = { ...res, success: true }
-    return new Response(JSON.stringify(resBody), { status: 200, headers: { "Content-Type": "application/json" } })
+    const resBody: ApiResponse = { success: true, ...res, }
+
+    return new Response(JSON.stringify(resBody), {
+      status: 200,
+      headers: { "Content-Type": "application/json" }
+    })
   } catch (err: any) {
-    const resBody: ApiResponse = { success: false, message: err.message }
-    return new Response(JSON.stringify(resBody), { status: 500, headers: { "Content-Type": "application/json" } })
+
+    const resBody: ApiResponse = {
+      success: false,
+      message: err.message
+    }
+
+    return new Response(JSON.stringify(resBody), {
+      status: 500,
+      headers: { "Content-Type": "application/json" }
+    })
   }
 }

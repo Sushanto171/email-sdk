@@ -49,8 +49,4 @@ export class SendEmailSDK {
 }
 
 
-const sendEmail = new SendEmailSDK({ auth: { pass: "", user: "" }, host: "122", port: 122, secure: false })
-
-const gmailSender = SendEmailSDK.createGmail({ pass: "", user: "" })
-
 
