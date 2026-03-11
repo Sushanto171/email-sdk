@@ -2,8 +2,6 @@ import nodemailer from "nodemailer";
 import { SentMessageInfo } from "nodemailer/lib/smtp-transport";
 import { ApiResponse, EmailOptions, SMTPConfig } from "../../../src/types";
 
-export const runtime = "edge";
-
 
 export async function POST(req: Request): Promise<Response> {
   try {
