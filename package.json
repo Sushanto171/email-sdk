@@ -1,6 +1,6 @@
 {
   "name": "@sushantokumar/email-sdk",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Minimal class-based, provider-agnostic email SDK with serverless API support",
   "main": "./dist/sendEmail.js",
   "module": "./dist/sendEmail.mjs",
