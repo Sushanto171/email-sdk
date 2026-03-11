@@ -2,30 +2,48 @@
   "name": "@sushanto/email-sdk",
   "version": "1.0.0",
   "description": "Minimal class-based, provider-agnostic email SDK with serverless API support",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "./dist/sendEmail.js",
+  "module": "./dist/sendEmail.mjs",
+  "types": "./dist/sendEmail.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/sendEmail.js",
+      "import": "./dist/sendEmail.mjs",
+      "types": "./dist/sendEmail.d.ts"
+    }
+  },
   "files": [
     "dist"
   ],
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sushanto171/email-sdk"
+  },
+  "homepage": "https://github.com/Sushanto171/email-sdk#readme",
+  "bugs": {
+    "url": "https://github.com/Sushanto171/email-sdk/issues"
+  },
   "scripts": {
     "build": "tsup src/sendEmail.ts --format cjs,esm --dts",
-    "test": "echo \"No tests yet\""
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "email",
     "sdk",
     "smtp",
-    "serverless",
-    "class-based"
+    "serverless"
   ],
   "author": "Sushanto Kumar",
   "license": "MIT",
+  "dependencies": {
+    "nodemailer": "^8.0.2"
+  },
   "devDependencies": {
     "tsup": "^7.0.0",
     "typescript": "^5.3.0",
     "@types/nodemailer": "^7.0.11"
-  },
-  "dependencies": {
-    "nodemailer": "^8.0.2"
   }
 }
