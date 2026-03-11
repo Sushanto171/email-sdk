@@ -1,12 +1,12 @@
 {
-  "version": 3,
+  "version": 2,
   "name": "email-sdk",
   "builds": [
     {
       "src": "src/sendEmail.ts",
       "use": "@vercel/node",
       "config": {
-        "tsconfig": "tsconfig.json"
+        "includeFiles": ["dist/**"]
       }
     }
   ],
@@ -15,7 +15,5 @@
       "src": "/(.*)",
       "dest": "/src/sendEmail.ts"
     }
-  ],
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist"
+  ]
 }
