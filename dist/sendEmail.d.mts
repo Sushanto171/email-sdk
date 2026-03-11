@@ -128,6 +128,16 @@ interface EmailOptions {
      */
     text?: string;
 }
+interface ApiResponse {
+    success: boolean;
+    message?: string;
+    envelope?: any;
+    messageId?: string;
+    accepted?: Array<string | Address>;
+    rejected?: Array<string | Address>;
+    pending?: Array<string | Address>;
+    response?: string;
+}
 interface StaticMethods {
     /**
      * SMTP username (usually your email address).
@@ -159,7 +169,7 @@ declare class SendEmailSDK {
     private apiUrl;
     private smtp;
     constructor(smtp: SMTPConfig);
-    send({ from, to, subject, html }: EmailOptions): Promise<any>;
+    send({ from, to, subject, html }: EmailOptions): Promise<ApiResponse>;
     static createGmail({ user, pass }: StaticMethods): SendEmailSDK;
     static createOutlook({ user, pass }: StaticMethods): SendEmailSDK;
 }

@@ -13,7 +13,12 @@
     }
   },
   "files": [
-    "dist"
+    "dist/sendEmail.js",
+    "dist/sendEmail.mjs",
+    "dist/sendEmail.d.ts",
+    "dist/sendEmail.d.mts",
+    "dist/types.d.ts",
+    "dist/types.js"
   ],
   "publishConfig": {
     "access": "public"
