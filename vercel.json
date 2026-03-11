@@ -1,19 +1,5 @@
 {
   "version": 2,
-  "name": "email-sdk",
-  "builds": [
-    {
-      "src": "src/sendEmail.ts",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": ["dist/**"]
-      }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/src/sendEmail.ts"
-    }
-  ]
+  "builds": [{ "src": "api/send-email.ts", "use": "@vercel/node" }],
+  "routes": [{ "src": "/api/send-email", "dest": "api/send-email.ts" }]
 }
