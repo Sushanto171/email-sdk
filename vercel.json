@@ -1,5 +1,15 @@
 {
   "version": 2,
-  "builds": [{ "src": "api/send-email.ts", "use": "@vercel/node" }],
-  "routes": [{ "src": "/api/send-email", "dest": "api/send-email.ts" }]
+  "builds": [
+    {
+      "src": "src/server.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/src/server.ts"
+    }
+  ]
 }

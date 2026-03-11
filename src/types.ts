@@ -126,7 +126,7 @@ export interface EmailOptions {
    * `
    * ```
    */
-  html: string
+  html?: string
 
   /**
    * Optional plain text fallback.
