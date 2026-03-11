@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Sushanto171/email-sdk"
+    "url": "git+https://github.com/Sushanto171/email-sdk.git"
   },
   "homepage": "https://github.com/Sushanto171/email-sdk#readme",
   "bugs": {
