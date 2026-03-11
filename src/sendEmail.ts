@@ -1,4 +1,4 @@
-import type { EmailOptions, SMTPConfig, StaticMethods } from "./types";
+import type { ApiResponse, EmailOptions, SMTPConfig, StaticMethods } from "./types";
 
 /**
  * Minimal class-based SDK
@@ -13,7 +13,7 @@ export class SendEmailSDK {
     this.smtp = smtp
   }
 
-  async send({ from, to, subject, html }: EmailOptions) {
+  async send({ from, to, subject, html }: EmailOptions): Promise<ApiResponse> {
     const res = await fetch(this.apiUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
