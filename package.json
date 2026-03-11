@@ -1,6 +1,6 @@
 {
   "name": "@sushanto/email-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Minimal class-based, provider-agnostic email SDK with serverless API support",
   "main": "./dist/sendEmail.js",
   "module": "./dist/sendEmail.mjs",
